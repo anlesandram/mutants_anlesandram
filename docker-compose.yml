@@ -1,0 +1,13 @@
+version: '2'
+services:
+  mutant:
+    build: .
+    ports:
+      - "8080:8080"
+      - "8003:8003"
+    environment:
+      - CATALINA_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8003
+  redis:
+    image: redis:4.0.10
+    ports:
+      - '6379:6379'

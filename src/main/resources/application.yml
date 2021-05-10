@@ -1,0 +1,9 @@
+server:
+  servlet:
+    context-path: /mercadolibre-mutant-svc
+
+spring:
+  redis:
+    host: redis
+    port: 6379
+
