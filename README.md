@@ -1,5 +1,12 @@
 # Mutantes Aplicación
 
+
+###### Description
+`Magneto quiere reclutar la mayor cantidad de mutantes para poder luchar contra los X-Men.
+Te ha contratado a ti para que desarrolles un proyecto que detecte si un humano es mutante basándose en su secuencia de ADN.
+Para eso te ha pedido crear un programa en donde recibirás como parámetro un array de Strings que representan cada fila de una 
+tabla de (NxN) con la secuencia del ADN. Las letras de los Strings solo pueden ser: (A,T,C,G), las cuales representan cada base nitrogenada del ADN.`
+
 ##### Para ejecutar la aplicación, debe tener configurado docker
 
 `docker-compose up`
@@ -8,31 +15,37 @@
 
 ###### Request:
 
-`curl --location --request GET 'localhost:8080/mercadolibre-mutant-svc/actuator/health'`
+`curl --location --request GET 'http://ALB-1280084128.us-east-2.elb.amazonaws.com/mercadolibre-mutant-svc/actuator/health'`
 
-##### Response:
+<img src="/images/healthcheck.PNG"/>
 
-`{
-     "status": "UP"
- }`
 
 ##### Para consultar ADN Mutante
 
 ###### Request:
 
-`curl --location --request POST 'localhost:8080/mercadolibre-mutant-svc/mutant' \
- --header 'Authorization: BEARER b60c9d27c9b5404d94842fc2f7948c55' \
- --header 'Content-Type: application/json' \
- --data-raw '{
-   "dna": ["ATGAAT", "CAATGA", "TAGCAT", "ATCAGG", "CCCGTA", "CCACTG"]
- }'`
+`curl --location --request POST 'http://ALB-1280084128.us-east-2.elb.amazonaws.com/mercadolibre-mutant-svc/mutant' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+"dna": ["ATGAAT", "CAATGA", "TAGCAT", "ATCAGG", "CCCGTA", "CCACTG"]
+}'`
+
+<img src="/images/post_mutants.PNG"/>
 
 ##### Para consultar las estadisticas
 
-`curl --location --request GET 'localhost:8080/mercadolibre-mutant-svc/stats'`
+###### Request:
 
-Swagger
-<img src="/images/swagger.PNG"/>
+`curl --location --request GET 'http://ALB-1280084128.us-east-2.elb.amazonaws.com/mercadolibre-mutant-svc/stats'`
 
+<img src="/images/healthcheck.PNG"/>
 
+##### Swagger
+<img src="/images/stats_mutants.PNG"/>
 
+##### AWS
+
+########## This application is running in aws
+
+<img src="/images/ecr.png"/>
+<img src="/images/ecs.PNG"/>
