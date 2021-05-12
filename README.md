@@ -31,7 +31,8 @@
 
 `curl --location --request GET 'localhost:8080/mercadolibre-mutant-svc/stats'`
 
-
+Swagger
+<img src="/images/swagger.PNG"/>
 
 
 
