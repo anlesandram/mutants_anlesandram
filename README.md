@@ -38,10 +38,10 @@ tabla de (NxN) con la secuencia del ADN. Las letras de los Strings solo pueden s
 
 `curl --location --request GET 'http://ALB-1280084128.us-east-2.elb.amazonaws.com/mercadolibre-mutant-svc/stats'`
 
-<img src="/images/healthcheck.PNG"/>
+<img src="/images/stats_mutants.PNG"/>
 
 ##### Swagger
-<img src="/images/stats_mutants.PNG"/>
+<img src="/images/swagger.PNG"/>
 
 #####Jacoco
 <img src="/images/jacoco.PNG"/>
