@@ -46,6 +46,5 @@ tabla de (NxN) con la secuencia del ADN. Las letras de los Strings solo pueden s
 ##### AWS
 
 ########## This application is running in aws
-
-<img src="/images/ecr.png"/>
 <img src="/images/ecs.PNG"/>
+
