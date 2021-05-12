@@ -2,6 +2,7 @@ package com.mercadolibre.service.mutants.controller.impl;
 
 import com.mercadolibre.service.mutants.controller.MutantRest;
 import com.mercadolibre.service.mutants.model.MutantDNA;
+import com.mercadolibre.service.mutants.model.MutantStatDNA;
 import com.mercadolibre.service.mutants.service.MutantService;
 
 import org.jetbrains.annotations.NotNull;
@@ -18,13 +19,13 @@ public class MutantRestImpl implements MutantRest {
     MutantService mutantService;
 
     @Override
-    public ResponseEntity getMutant(@RequestBody @NotNull MutantDNA mutantDNA) {
+    public ResponseEntity<String> getMutant(@RequestBody @NotNull MutantDNA mutantDNA) {
         return mutantService.processDNAMutant(mutantDNA) ? ResponseEntity
                 .status(HttpStatus.OK).build():ResponseEntity.status(HttpStatus.FORBIDDEN).build();
     }
 
     @Override
-    public ResponseEntity getStats() {
+    public ResponseEntity<MutantStatDNA> getStats() {
         return ResponseEntity.status(HttpStatus.OK).body(mutantService.calculateStats());
     }
 

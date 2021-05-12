@@ -74,7 +74,7 @@ class MutantServiceTest {
 
         MutantStatDNA mutantStatDNA = mutantService.calculateStats();
         assertNotNull(mutantStatDNA);
-        assertEquals(mutantStatDNA.getNumberMutants(),0);
+        assertEquals(0, mutantStatDNA.getNumberMutants());
     }
 
 }

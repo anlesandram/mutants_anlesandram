@@ -60,11 +60,9 @@ public class MutantProcessor {
             }
         }
 
-        if (newDnaSequence.equals(possibleDnaMatch)) {
-            if (checkHorizontalHint(matrizDna, row, col, DEFAULT_INCREASE_VALUE, 0, 0) >= patternLength) {
-                matrizDnaMirror[row][col] = newDnaSequence + SUFFIX_HORIZONTAL;
-                return 1;
-            }
+        if (newDnaSequence.equals(possibleDnaMatch) && checkHorizontalHint(matrizDna, row, col, DEFAULT_INCREASE_VALUE, 0, 0) >= patternLength) {
+            matrizDnaMirror[row][col] = newDnaSequence + SUFFIX_HORIZONTAL;
+            return 1;
         }
 
         return 0;
@@ -87,12 +85,11 @@ public class MutantProcessor {
             }
         }
 
-        if (newDnaSequence.equals(possibleDnaMatch)) {
-            if (checkVerticalHint(matrizDna, row, col, DEFAULT_INCREASE_VALUE, 0, 0) >= patternLength) {
-                matrizDnaMirror[row][col] = newDnaSequence + SUFFIX_VERTICAL;
-                return 1;
-            }
+        if (newDnaSequence.equals(possibleDnaMatch) && checkVerticalHint(matrizDna, row, col, DEFAULT_INCREASE_VALUE, 0, 0) >= patternLength) {
+            matrizDnaMirror[row][col] = newDnaSequence + SUFFIX_VERTICAL;
+            return 1;
         }
+
         return 0;
     }
 
@@ -113,12 +110,11 @@ public class MutantProcessor {
             }
         }
 
-        if (newDnaSequence.equals(possibleDnaMatch)) {
-            if (checkDiagonalRightHint(matrizDna, row, col, DEFAULT_INCREASE_VALUE, 0, 0) >= patternLength) {
-                matrizDnaMirror[row][col] = newDnaSequence + SUFFIX_DIAGONAL_RIGHT;
-                return 1;
-            }
+        if (newDnaSequence.equals(possibleDnaMatch) && checkDiagonalRightHint(matrizDna, row, col, DEFAULT_INCREASE_VALUE, 0, 0) >= patternLength) {
+            matrizDnaMirror[row][col] = newDnaSequence + SUFFIX_DIAGONAL_RIGHT;
+            return 1;
         }
+
         return 0;
     }
 
@@ -138,12 +134,11 @@ public class MutantProcessor {
             }
         }
 
-        if (newDnaSequence.equals(possibleDnaMatch)) {
-            if (checkDiagonalLeftHint(matrizDna, row, col, DEFAULT_INCREASE_VALUE, 0, 0) >= patternLength) {
-                matrizDnaMirror[row][col] = newDnaSequence + SUFFIX_DIAGONAL_LEFT;
-                return 1;
-            }
+        if (newDnaSequence.equals(possibleDnaMatch) && checkDiagonalLeftHint(matrizDna, row, col, DEFAULT_INCREASE_VALUE, 0, 0) >= patternLength) {
+            matrizDnaMirror[row][col] = newDnaSequence + SUFFIX_DIAGONAL_LEFT;
+            return 1;
         }
+
         return 0;
     }
 
@@ -151,7 +146,7 @@ public class MutantProcessor {
         if (iterations >= patternLength) {
             return sequences;
         } else {
-            sequences = matrizDna[row][col + increase].equals(matrizDna[row][col]) ? sequences + 1:0;
+            sequences = matrizDna[row][col + increase].equals(matrizDna[row][col]) ? sequences + 1 : 0;
             iterations++;
             increase++;
             return checkHorizontalHint(matrizDna, row, col, increase, sequences, iterations);
@@ -162,7 +157,7 @@ public class MutantProcessor {
         if (iterations >= patternLength) {
             return sequences;
         } else {
-            sequences = matrizDna[row + increase][col].equals(matrizDna[row][col]) ? sequences + 1:0;
+            sequences = matrizDna[row + increase][col].equals(matrizDna[row][col]) ? sequences + 1 : 0;
             iterations++;
             increase++;
             return checkVerticalHint(matrizDna, row, col, increase, sequences, iterations);
@@ -173,7 +168,7 @@ public class MutantProcessor {
         if (iterations >= patternLength) {
             return sequences;
         } else {
-            sequences = matrizDna[row + increase][col - increase].equals(matrizDna[row][col]) ? sequences + 1:0;
+            sequences = matrizDna[row + increase][col - increase].equals(matrizDna[row][col]) ? sequences + 1 : 0;
             iterations++;
             increase++;
             return checkDiagonalLeftHint(matrizDna, row, col, increase, sequences, iterations);
@@ -184,7 +179,7 @@ public class MutantProcessor {
         if (iterations >= patternLength) {
             return sequences;
         } else {
-            sequences = matrizDna[row + increase][col + increase].equals(matrizDna[row][col]) ? sequences + 1:0;
+            sequences = matrizDna[row + increase][col + increase].equals(matrizDna[row][col]) ? sequences + 1 : 0;
             iterations++;
             increase++;
             return checkDiagonalRightHint(matrizDna, row, col, increase, sequences, iterations);

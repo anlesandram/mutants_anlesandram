@@ -38,7 +38,7 @@ public class MutantService implements Serializable {
 
     public MutantStatDNA calculateStats() {
         Map<Object, Object> sequences = repositoryDNA.findAllDNASequences();
-        MutantStatDNA mutantStatDNA = new MutantStatDNA();
+        var mutantStatDNA = new MutantStatDNA();
 
         if (sequences.isEmpty()) {
             return mutantStatDNA;

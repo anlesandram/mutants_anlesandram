@@ -24,7 +24,7 @@ public interface MutantRest {
             }
     )
     @PostMapping("/mutant")
-    ResponseEntity getMutant(MutantDNA mutantDNA);
+    ResponseEntity<String> getMutant(MutantDNA mutantDNA);
 
 
     @ApiOperation(value = "Mutant Service - Mutant",
@@ -32,6 +32,6 @@ public interface MutantRest {
     response = MutantStatDNA.class)
     @ApiResponse(code = 200, message = "Stats about the verifications of DNA between Mutants and Humans")
     @GetMapping("/stats")
-    ResponseEntity getStats();
+    ResponseEntity<MutantStatDNA> getStats();
 
 }

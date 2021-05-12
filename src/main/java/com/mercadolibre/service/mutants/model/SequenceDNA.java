@@ -8,7 +8,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class SequenceDNA {
 
-    private String Dna;
+    private String dna;
     private String type;
 
 }
