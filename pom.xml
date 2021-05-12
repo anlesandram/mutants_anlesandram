@@ -20,6 +20,8 @@
         <jetbrains.anotation>13.0</jetbrains.anotation>
         <cache.version>2.4.5</cache.version>
         <jacoco.version>0.8.6</jacoco.version>
+        <swagger.version>3.0.0</swagger.version>
+        <swagger.version.ui>3.0.0</swagger.version.ui>
     </properties>
     <dependencies>
         <dependency>
@@ -63,6 +65,16 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version.ui}</version>
         </dependency>
     </dependencies>
 
