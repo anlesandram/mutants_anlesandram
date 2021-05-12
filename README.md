@@ -43,6 +43,9 @@ tabla de (NxN) con la secuencia del ADN. Las letras de los Strings solo pueden s
 ##### Swagger
 <img src="/images/stats_mutants.PNG"/>
 
+#####Jacoco
+<img src="/images/jacoco.PNG"/>
+
 ##### AWS
 
 ##### Esta aplicacion esta configurada en aws
